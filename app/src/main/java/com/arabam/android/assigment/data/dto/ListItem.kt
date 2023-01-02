@@ -5,25 +5,25 @@ import com.google.gson.annotations.SerializedName
 
 data class ListItem(
     @SerializedName("category")
-    val category: Category,
+    val category: Category?,
     @SerializedName("date")
-    val date: String,
+    val date: String?,
     @SerializedName("dateFormatted")
-    val dateFormatted: String,
+    val dateFormatted: String?,
     @SerializedName("id")
-    val id: Int,
+    val id: Int?,
     @SerializedName("location")
-    val location: Location,
+    val location: Location?,
     @SerializedName("modelName")
-    val modelName: String,
+    val modelName: String?,
     @SerializedName("photo")
-    val photo: String,
+    val photo: String?,
     @SerializedName("price")
-    val price: Int,
+    val price: Int?,
     @SerializedName("priceFormatted")
-    val priceFormatted: String,
+    val priceFormatted: String?,
     @SerializedName("properties")
-    val properties: List<Property>,
+    val properties: List<Property>?,
     @SerializedName("title")
-    val title: String
+    val title: String?
 )

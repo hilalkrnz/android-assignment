@@ -5,17 +5,17 @@ plugins {
     id 'com.google.dagger.hilt.android'
 }
 android {
-    compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    compileSdkVersion Configs.compileSdkVersion
+    buildToolsVersion Configs.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.arabam.android.assigment"
-        minSdkVersion 22
-        targetSdkVersion 33
-        versionCode 1
-        versionName "1.0"
+        applicationId Configs.applicationId
+        minSdkVersion Configs.minSdkVersion
+        targetSdkVersion Configs.targetSdkVersion
+        versionCode Configs.versionCode
+        versionName Configs.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner Configs.testInstrumentationRunner
     }
 
     buildTypes {
@@ -24,6 +24,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
+
+    flavorDimensions "api"
+    productFlavors {
+        api {
+            dimension "api"
+            buildConfigField "String", "BASE_URL", "\"http://sandbox.arabamd.com\""
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,30 +46,33 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation Dependencies.kotlin_version
 
-    //AndridX
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    //AndroidX
+    implementation Dependencies.android_core_ktx_version
+    implementation Dependencies.app_compat_version
 
     // Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    implementation 'androidx.fragment:fragment-ktx:1.5.4'
-    implementation 'androidx.activity:activity-ktx:1.6.1'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation Dependencies.lifecycle_version
+    implementation Dependencies.fragment_version
+    implementation Dependencies.activity_version
+    implementation Dependencies.extensions_version
 
-    //Meterial
-    implementation 'com.google.android.material:material:1.7.0'
+    //Material
+    implementation Dependencies.material_version
 
     //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation Dependencies.retrofit_version
+    implementation Dependencies.converter_gson
 
     // Gson
-    implementation 'com.google.code.gson:gson:2.10'
+    implementation Dependencies.gson_version
+
+    //Paging
+    implementation Dependencies.paging_version
 
     //Dagger Hilt
-    implementation 'com.google.dagger:hilt-android:2.43'
-    kapt 'com.google.dagger:hilt-android-compiler:2.43'
+    implementation Dependencies.hilt_version
+    kapt Dependencies.hilt_android_compiler
 
 }

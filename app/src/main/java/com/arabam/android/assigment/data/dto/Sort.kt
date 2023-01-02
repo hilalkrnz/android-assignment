@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Sort(
     @SerializedName("sortType")
-    val sortType: Int,
+    val sortType: Int?,
     @SerializedName("sortDirections")
-    val sortDirections: Int
+    val sortDirections: Int?
 )

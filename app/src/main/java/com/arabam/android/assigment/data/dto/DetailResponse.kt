@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class DetailResponse(
     @SerializedName("data")
-    val data : DetailItem,
+    val data : DetailItem?,
     @SerializedName("status")
-    val status : Int
+    val status : Int?
 )
