@@ -1,4 +1,4 @@
-package com.arabam.android.assigment.di
+package com.arabam.android.assigment.di.network
 
 import com.arabam.android.assigment.BuildConfig
 import com.arabam.android.assigment.data.api.ArabamApi
