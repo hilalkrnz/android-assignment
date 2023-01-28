@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
+    id 'kotlin-parcelize'
 }
 android {
     compileSdkVersion Configs.compileSdkVersion
@@ -18,12 +19,17 @@ android {
         testInstrumentationRunner Configs.testInstrumentationRunner
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 
 
 
@@ -61,6 +67,9 @@ dependencies {
     //Material
     implementation Dependencies.material_version
 
+    //ConstraintLayout
+    implementation Dependencies.constraintLayout_version
+
     //Retrofit
     implementation Dependencies.retrofit_version
     implementation Dependencies.converter_gson
@@ -73,6 +82,12 @@ dependencies {
 
     //Dagger Hilt
     implementation Dependencies.hilt_version
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     kapt Dependencies.hilt_android_compiler
 
+    //Navigation Component
+    implementation Dependencies.fragment_nav_version
+    implementation Dependencies.ui_nav_version
 }

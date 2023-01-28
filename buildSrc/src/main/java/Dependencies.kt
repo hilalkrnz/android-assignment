@@ -14,6 +14,9 @@ object Dependencies {
     //Material
     const val material_version = "com.google.android.material:material:${Versions.material_version}"
 
+    //ConstraintLayout
+    const val constraintLayout_version = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout_version}"
+
     //Retrofit
     const val retrofit_version = "com.squareup.retrofit2:retrofit:${Versions.retrofit_version}"
     const val converter_gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit_version}"
@@ -27,5 +30,9 @@ object Dependencies {
     //Dagger Hilt
     const val  hilt_version = "com.google.dagger:hilt-android:${Versions.hilt_version}"
     const val  hilt_android_compiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt_version}"
+
+    //Navigation Component
+    const val fragment_nav_version = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
+    const val ui_nav_version = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
 
 }

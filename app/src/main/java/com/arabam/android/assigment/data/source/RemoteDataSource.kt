@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface RemoteDataSource {
     //TODO
-    suspend fun getListing() : Flow<PagingData<ListItem>>
+    fun getListing(sort: Int?, sortDirecton: Int?) : Flow<PagingData<ListItem>>
 
     suspend fun getDetailById(id: Int): NetworkResponseState<DetailItem>
 

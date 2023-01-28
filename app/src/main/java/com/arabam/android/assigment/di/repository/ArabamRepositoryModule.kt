@@ -1,7 +1,7 @@
 package com.arabam.android.assigment.di.repository
 
-import com.arabam.android.assigment.data.repository.ArabamRepository
-import com.arabam.android.assigment.domain.repository.ArabamRepositoryImpl
+import com.arabam.android.assigment.domain.repository.ArabamRepository
+import com.arabam.android.assigment.data.repository.ArabamRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

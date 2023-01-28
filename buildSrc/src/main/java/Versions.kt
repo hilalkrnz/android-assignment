@@ -18,6 +18,9 @@ object Versions {
     //Material
     const val material_version = "1.7.0"
 
+    //ConstraintLayout
+    const val constraintLayout_version = "2.1.4"
+
     //Retrofit
     const val retrofit_version = "2.9.0"
 
@@ -29,5 +32,8 @@ object Versions {
 
     //Dagger Hilt
     const val  hilt_version = "2.43"
+
+    //Navigation Component
+    const val nav_version = "2.5.1"
 }
 

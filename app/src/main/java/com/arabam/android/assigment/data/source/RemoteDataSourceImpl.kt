@@ -7,21 +7,20 @@ import com.arabam.android.assigment.data.NetworkResponseState
 import com.arabam.android.assigment.data.api.ArabamApi
 import com.arabam.android.assigment.data.dto.DetailItem
 import com.arabam.android.assigment.data.dto.ListItem
-import com.arabam.android.assigment.data.dto.Sort
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class RemoteDataSourceImpl @Inject constructor(
-    private val arabamApi: ArabamApi,
-    private val sort: Sort
+    private val arabamApi: ArabamApi
 ) : RemoteDataSource {
 
-    override suspend fun getListing(): Flow<PagingData<ListItem>> =
+    override fun getListing(sort: Int?, sortDirecton: Int?): Flow<PagingData<ListItem>> =
         Pager(
             config = PagingConfig(
-                pageSize = NETWORK_PAGE_SIZE
+                pageSize = NETWORK_PAGE_SIZE,
+                enablePlaceholders = false
             ),
-            pagingSourceFactory = { ListPagingDataSource(arabamApi, sort) }
+            pagingSourceFactory = { ListPagingDataSource(arabamApi, sort, sortDirecton) }
         ).flow
 
 
@@ -37,6 +36,6 @@ class RemoteDataSourceImpl @Inject constructor(
         }
 
     companion object {
-        const val NETWORK_PAGE_SIZE = 20
+        const val NETWORK_PAGE_SIZE = 5
     }
 }
